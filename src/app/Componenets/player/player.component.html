@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="line"></div>
+
+    <div class="col-3" style="height: 98%;">
+
+      <div class="sound">
+          <img [src]="[image]" alt="song-img">
+          <div class="text-white text-truncate">
+            <span>{{name}}</span>
+          </div>
+      </div>
+
+    </div>
+
+    <div [ngClass]="{'disabled-controls':!duration}" class="col-6" style="height: 98%;">
+       <div class="play-controls">
+        <a role="button" aria-label="previous" class="bi bi-skip-backward fs-1" (click)="previous()"></a>
+        <a role="button" aria-label="togglePlayPause" class="bi fs-1" [ngClass]="{'bi-play-circle':!isPlaying,'bi-pause-circle':isPlaying}" (click)="togglePlayPause()"></a>
+        <a role="button" aria-label="next" class="bi bi-skip-forward fs-1" (click)="next()"></a>
+      </div>
+      <div class="progress-inf">
+          <div class="myProgressBar">
+            <div class="progress" [appProgress]="inputRange" ></div>
+            <div class="progress progress-background "></div>
+
+            <input #inputRange (change)="advanceAudio($event)" (input)="onInput()"
+            type="range" class="custom-range progress-bar" aria-label="advanceAudio"
+            step=".2" min="0" max="100" 
+            [value]="rangeValue">
+
+          </div>
+
+        <div class="timers">
+          <span>{{[currentTime] | SecondsToMinutes}}</span>
+          <span>{{duration | SecondsToMinutes}}</span>
+        </div>
+      </div> 
+    </div>
+
+    <div class="col-3 controls" style="height: 98%;">
+      <i class="bi fs-3 isMuted" [ngClass]="{'bi-volume-up':!isMuted,'bi-volume-mute':isMuted}" (click)="mute()"></i>
+      <div class="myProgressBar" style="height: 3%; width: 70%;">
+        <div class="progress" appVolumAudio></div>
+        <div class="progress progress-background"></div>
+        <input #inputRangeVol type="range" aria-label="updateVolum" class="custom-range progress-bar" (input)="updateVolum($event)" step=".2" min="0" max="100" [(ngModel)]="rangeVolum">
+      </div>
+    </div>
+
+  </div>
+</div>

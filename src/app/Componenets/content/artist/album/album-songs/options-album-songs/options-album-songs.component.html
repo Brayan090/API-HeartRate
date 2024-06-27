@@ -1,0 +1,16 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" style="display: flex; align-content: center;">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="playlist">
+    <span>Add to Playlist</span>
+  </button>
+  <button mat-menu-item (click)="addToFavorites()">
+    <span>Add to Favorites</span>
+  </button>
+</mat-menu>
+
+
+<mat-menu #playlist="matMenu">
+  <button mat-menu-item *ngFor="let playlist of playlists" (click)="addToPlaylist(playlist.id)">{{playlist.name}}</button>
+</mat-menu>

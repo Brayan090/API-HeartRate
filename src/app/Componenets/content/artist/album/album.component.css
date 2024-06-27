@@ -1,0 +1,68 @@
+h3{
+    margin-top: 10px;
+    font-size: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.row{
+    height: 100%;
+    margin-top: 10px;
+    padding: 0%;
+}
+
+.col{
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    padding: 20px;
+}
+
+
+
+.card{
+    display: flex;
+    transition: 200ms;
+    background: none;
+    align-items: center;
+}
+
+.card-body{
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.card-text{
+    width: 100%;
+    font-size: auto;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Times New Roman', Times, serif;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+
+
+.card:hover{
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    -moz-box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    transition: 200ms;
+}
+
+
+.btn-follow{
+    
+}

@@ -1,0 +1,207 @@
+.album{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.img-album-container{
+    width: 7vw;
+    aspect-ratio: 1 / 1;
+    border-radius: 3px;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+.img-album{
+    width: 100%; 
+    height: 100%; 
+    border-radius: 3px;
+}
+
+.album-container{
+    height: 90%;
+    width: 83%;
+    color: rgb(230, 230, 230);
+}
+
+.grid-container{
+    display: grid;
+    padding-left: 5%;
+    grid-template-rows: repeat(2, 25%);
+    align-content: center;
+}
+
+.grid-item{
+    color: white;
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+
+.divTable{
+    width: 100%;
+    height: 70%;
+
+}
+
+.divTableHeader{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    display: flex;
+    float: left;
+}
+
+.numSong{
+    width: 60px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    color: rgb(179, 179, 179);
+}
+
+.nameSong{
+    width: 850px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    color: rgb(179, 179, 179);
+}
+
+
+.timeSong{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    color: rgb(179, 179, 179);
+}
+
+.optionSong{
+    width: 60px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+
+h6{
+    font-weight: bold;
+    cursor: default;
+    margin-left: 10px;
+}
+
+.divTableBody{
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.divTableRow{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    float: left;
+    color: rgb(231, 231, 231);
+    transition: 200ms ease-in-out;
+}
+
+.divTableRow:hover{
+    -webkit-box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    -moz-box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    transition: 200ms ease-in-out;
+}
+
+.divTableCol-num{
+    width: 60px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.divTableCol-song{
+    width: 850px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.divTableCol-time{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip{
+    width: 20%;
+    height: 10%;
+    background-color: aliceblue;
+}
+
+
+@media (max-width: 1213px){
+    #date{
+        display: none;
+    }
+}
+@media (max-width: 991px){
+    #album{
+        display: none;
+    }
+}
+
+.size{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.reproduction{
+    color: rgb(144, 255, 110);
+    animation: reproduction 2s linear infinite;
+}
+
+
+@keyframes reproduction {
+    0% {
+        transform: rotate(0deg);
+    }
+    16.6% {
+        transform: rotate(60deg);
+    }
+    33.2% {
+        transform: rotate(120deg);
+    }
+    49.8% {
+        transform: rotate(180deg);
+    }
+    66.4% {
+        transform: rotate(240deg);
+    }
+    83% {
+        transform: rotate(300deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

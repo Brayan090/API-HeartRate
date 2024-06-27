@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+    <h2 style="margin-top: 10px; font-size: x-large;">Library</h2>
+    <div class="actions">
+      <div class="input-group flex-nowrap search">
+        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" name="search" aria-label="search" (input)="search($event)">
+      </div>
+      <i (click)="openModal()" class="bi bi-plus-square fs-3" style="margin-left: 10px;"></i>
+    </div>
+    <div class="line"></div>
+  </div>
+
+  <div class="row scrollable-container">
+      <!-- List to favorites -->
+      <a role="button" aria-label="fav-list" (click)="loadFavorites()" class="fav-list">
+        <img class="ico-list" src="assets/ico.png" alt="ico-fav-list">
+        <h3 style="display: inline; font-weight: 700; font-size: large;">Favorite List</h3>
+      </a>
+
+      <!-- List of playlist -->
+      <a role="button" aria-label="playlist" [appRightClick]="playlist.id" (rightClick)="handleRightClick($event)" (click)="loadSongs(playlist.songs,playlist.id,playlist.coverImage,playlist.name)" class="fav-list text-truncate" *ngFor="let playlist of Playlists">
+        <img class="ico-list" [src]="playlist.coverImage" alt="">
+        <h3 style="display: inline; font-weight: 700; font-size: large;" [title]="playlist.name">{{playlist.name}}</h3>
+      </a>
+      
+  </div>
+
+</div>

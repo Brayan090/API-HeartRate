@@ -1,0 +1,19 @@
+<h2 mat-dialog-title style="color: rgb(202, 202, 202);">{{editMode?'Edit':'Add'}} Playlist</h2>
+<hr>
+<form #myform="ngForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="mydialog">
+
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="playlistName" name="name" required #name="ngModel">
+    <br>
+    <label>Choose the image:</label>
+    <input (change)="onFileSelected($event)" type="file" accept="image/png" ngModel name="image" [required]="!editMode"
+      #image="ngModel">
+
+  </div>
+  <div mat-dialog-actions>
+    <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
+    |
+    <button type="submit" [disabled]="!myform.valid" class="btn btn-primary">Save</button>
+  </div>
+</form>

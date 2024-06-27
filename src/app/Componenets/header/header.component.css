@@ -1,0 +1,74 @@
+img{
+    width: 60px;
+    margin-left: 8px;
+}
+
+.navbar-toggler{
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.bi-list{
+    color: rgb(255, 0, 0);
+}
+
+.offcanvas{
+    background-color: #262626;
+    z-index: 500;
+}
+
+.offcanvas-title{
+    color: red;
+}
+
+
+.collapse, .navbar-collapse{
+    justify-content: right;
+}
+
+a{
+    color: rgba(255, 255, 255, 0.589);
+    box-sizing: border-box;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+a:hover{
+    color: red;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+
+h1{
+    margin-top: 10px;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 3px 8px rgb(255, 0, 0);
+    text-decoration:underline dashed;
+    font-size: x-large;
+}
+
+.show{
+    transition: 400ms ease-in-out;
+    
+}
+
+#dropdow-menu{
+    z-index: 1000;
+}
+
+#library{
+    display: none;
+}
+
+
+@media (max-width: 991px){
+    #library {
+        display: inline;
+    }
+}
+
+
+

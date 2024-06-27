@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="col myForm">
+
+      <section class="form-content" style="width: 80%; height: 100%;">
+        <div class="info" id="info-col-2">
+          <h2>Hello!</h2>
+          <hr>
+          <p>Log in or register to enjoy the best music content, 
+            create your own playlists, add music content to your favorites, 
+            follow your artists to stay up to date with their new releases and much more...!</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="mb-3">
+            <div class="form-text" *ngIf="errorType==='IC' || errorType==='UK'">{{errorMessage}}</div>
+            <label for="username" class="form-label">Username</label>
+            <input id="username" type="text" ngModel name="username" #username="ngModel" class="form-control" required>
+            <div class="form-text" *ngIf="errorType==='UE'">{{errorMessage}}</div>
+
+            <ng-container *ngIf="modeLogin===false">
+              <label for="email" class="form-label">Enter the email</label>
+              <input id="email" type="email" ngModel name="email" #email="ngModel" class="form-control" required>
+              <div class="form-text" *ngIf="errorType==='ER'">{{errorMessage}}</div>
+            </ng-container>
+          </div>
+          <div class="mb-3">
+
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" ngModel name="password" #password="ngModel" class="form-control" required minlength="8">
+
+            <ng-container *ngIf="modeLogin===false">
+              <label for="passwordRepeat" class="form-label">Repeat Password</label>
+              <input id="passwordRepeat" type="password" ngModel name="passwordRepeated" #passwordRepeated="ngModel" class="form-control" required>
+              <div class="form-text" *ngIf="passwordRepeated.value !== password.value">Passwords do not match!</div>
+            </ng-container>
+
+          </div>
+          <div class="mb-3 form-check">
+            <a aria-label="forgot-password" class="forgot-password" (click)="onChangePassword()">Forgot password?</a>
+          </div>
+          <button type="submit" [disabled]="!myForm.valid ? true:false" class="btn btn-outline-light">{{modeLogin?'Login':'Register'}}</button>
+          |
+          <button type="button" class="btn btn-outline-light" (click)="switchMode()">{{modeLogin?'Switch to Sing Up':'Switch to Login'}}</button>
+        </form>
+      </section>
+      
+    </div>
+    
+    <div id="info-col-1" class="col info-col">
+      <section class="info-section">
+        <div class="info">
+          <h2>Hello!</h2>
+          <hr>
+          <p>Log in or register to enjoy the best music content, 
+            create your own playlists, add music content to your favorites, 
+            follow your artists to stay up to date with their new releases and much more!</p>
+        </div>
+      </section>
+    </div>
+  </div>

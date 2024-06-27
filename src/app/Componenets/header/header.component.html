@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <img [src]="['assets/nota.png']" alt="">
+    <h1>HEART-RATE</h1>
+    <button (click)="toggleMenu()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+    <div [ngClass]="{'show':open,'close':!open}" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HEART-RATE</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" (click)="toggleMenu()"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a [routerLink]="['/']" class="nav-link"><i class="bi bi-house-heart-fill"> Home</i></a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/auth']" class="nav-link" *ngIf="!isAuth">
+              <i class="bi bi-person-fill-add"> Authenticate</i>
+            </a>
+  
+            <a role="button" class="nav-link" [matMenuTriggerFor]="menu" *ngIf="isAuth">
+              <i class="bi bi-person-fill-check dropdown-toggle"> {{user}}</i>
+            </a>
+            <mat-menu #menu="matMenu" id="dropdow-menu">
+              <button mat-menu-item>Edit Profile</button>
+            </mat-menu>
+          </li>
+          <li class="nav-item" id="library">
+            <a [routerLink]="['/library']" class="nav-link"><i class="bi bi-music-note-list"> Library</i></a>
+          </li>
+          <li class="nav-item" *ngIf="isAuth">
+            <a role="button" class="nav-link" (click)="logout()"><i class="bi bi-box-arrow-in-left"> Logout</i></a>
+          </li>          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+

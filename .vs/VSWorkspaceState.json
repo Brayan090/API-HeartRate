@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\Componenets",
+    "\\src\\app\\Componenets\\auth",
+    "\\src\\app\\Componenets\\auth\\forgot-password"
+  ],
+  "SelectedNode": "\\src\\app\\Componenets\\auth\\forgot-password\\forgot-password.component.html",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,46 @@
+<div class="album">
+  <div class="img-album-container">
+    <img class="img-album" [src]="[album.coverImage]" alt="">
+  </div>
+  <div class="album-container grid-container">
+    <h3 class="text-truncate grid-item">{{album.name}}</h3>
+    <h5 class="text-truncate grid-item">• {{album.releaseDate | date}}</h5>
+  </div>
+</div>
+
+<div class="divTable">
+  <div class="divTableHeader">
+    <div class="numSong">
+      <h6>#</h6>
+    </div>
+    <div class="nameSong">
+      <h6>Song</h6>
+    </div>
+    <div class="timeSong">
+      <h6><i class="bi bi-clock-history"></i></h6>
+    </div>
+    <div class="optionSong"></div>
+  </div>
+  <div class="divTableBody">
+
+    <div [appTogglePlayPause]="{isPlaying:isPlaying,songSelected:song.id,idSong:idSong}" class="divTableRow" *ngFor="let song of songs; let i = index">
+      <div class="divTableCol-num">
+        <i [appReset]="song.id" class="bi fs-5 size" id="btnToggle"
+            (click)="togglePlayPause(song.id)">
+            <i id="num">{{isPlaying && (song.id === idSong) ? '':(i+1)}}</i>
+        </i>
+        
+      </div>
+      <div class="divTableCol-song">
+        <h6 title="{{song.name}}" class="text-truncate">{{song.name}}</h6>
+      </div>
+      <div class="divTableCol-time">
+        <h6 [appGetDuration]="song.src" style="font-weight: normal;"></h6>
+      </div>
+      <div class="optionSong">
+        <app-options-album-songs [data]="{id:song.id}"></app-options-album-songs>
+      </div>
+    </div>
+
+  </div>
+</div>

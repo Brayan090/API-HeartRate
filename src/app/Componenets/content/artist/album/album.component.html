@@ -1,0 +1,21 @@
+<div class="container">
+  <h3 style="color: white;"> {{artistName}} - Album list</h3><button class="btn-follow" mat-raised-button color="accent"><i class="bi bi-plus"> Follow</i></button>
+  <!-- bi bi-plus -->
+  <div class="row row-cols-1 row-cols-md-4">
+
+    <a [routerLink]="['/',album.id,'player-list']" class="col" *ngFor="let album of albumes">
+      <div class="card" style="width: 18rem;">
+        <img [src]="[album.coverImage]" class="card-img-top">
+        <div class="card-body">
+          <div class="card-text">
+            <span class="text-truncate" title="Recuerdos">{{album.name}}</span>
+          </div>
+        </div>
+        <div class="card-text">
+          <p>{{album.releaseDate | date:"mediumDate"}}</p>
+        </div>
+      </div>
+    </a>  
+    
+  </div>
+</div>

@@ -1,0 +1,72 @@
+h3{
+    margin-top: 10px;
+    font-size: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.row{
+    margin-top: 10px;
+    padding: 0%;
+}
+
+.col{
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+img{
+    border-radius: 50%;
+}
+
+.card-img-top{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    padding: 20px;
+}
+
+
+
+.card{
+    display: flex;
+    transition: 200ms;
+    background: none;
+    align-items: center;
+}
+
+.card-body{
+    width: 100%;
+}
+
+.card-text{
+    width: 100%;
+    font-size: auto;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Times New Roman', Times, serif;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+
+
+.card:hover{
+    cursor: pointer;
+    -webkit-box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    -moz-box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    box-shadow: inset 0px 0px 15px 5px rgba(255,8,8,1);
+    transition: 200ms;
+}
+
+
+
+
+
+
+
