@@ -11,12 +11,14 @@ import { canActivate } from '../auth/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/Shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { FormResetPasswordComponent } from '../auth/form-reset-password/form-reset-password.component';
 
 const routes:Routes = [
     {path:'',component:ArtistComponent},
     {path:':id/album',component:AlbumComponent,canActivate:[canActivate]},
     {path:':id/player-list',component:AlbumSongsComponent,canActivate:[canActivate]},
     {path:'player-list',component:PlayerlistComponent,canActivate:[canActivate]},
+    {path:'password-recovery',component:FormResetPasswordComponent}
     
 ]
 
@@ -28,7 +30,8 @@ const routes:Routes = [
         AlbumComponent,
         OptionsMenuComponent,
         OptionsAlbumSongsComponent,
-        AlbumSongsComponent
+        AlbumSongsComponent,
+        FormResetPasswordComponent
     ],
     imports:[
         CommonModule,

@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import * as AuthActions from './auth.actions';
@@ -144,6 +144,28 @@ export class AuthEffects {
                     })
                 )
             })
+        ),{dispatch:false}
+      )
+
+      resetPassword = createEffect(
+        ()=> this.action$.pipe(
+            ofType<AuthActions.ResetPassword>(AuthActions.RESET_PASSWORD),
+            switchMap((action)=>{
+                return this.http.post(`${environment.apiUrl}/reset-password/`,action.payload,{headers: new HttpHeaders(
+                    {'Authorization':`Token ${action.payload.token}`,
+                    'Content-Type': 'application/json'}
+                )}).pipe(
+                    map(resp=>{
+                        return this.dialogRef.open(AlertComponent,{data:{title:'Password reset',message:'Password has been changed successfully.'}})
+                    }),
+                    catchError(errorResp=>{
+                        this.dialogRef.open(AlertComponent,{data:{title:'Password reset',message:'An error occurred, the password could not be changed.'}})
+                        return errorResp.error
+                    })
+                )
+            }),tap(() => {
+                this.router.navigate(['/auth']);
+              })
         ),{dispatch:false}
       )
 

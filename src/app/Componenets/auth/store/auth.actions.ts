@@ -14,6 +14,7 @@ export const LOG_OUT_START = '[Auth] Log-out start';
 export const LOG_OUT = '[Auth] Log-out';
 
 export const SEND_RECOVERY_EMAIL = '[Auth] Send recovery email';
+export const RESET_PASSWORD = '[Auth] Reset Password';
 
 export type AuthActions = 
     | AutoLogIn
@@ -66,6 +67,12 @@ export class SendRecoveryEmail implements Action{
     readonly type=SEND_RECOVERY_EMAIL;
 
     constructor(public payload:{email:string}){}
+}
+
+export class ResetPassword implements Action {
+    readonly type = RESET_PASSWORD;
+
+    constructor(public payload:{token:string,password:string}){}
 }
 
 export class ClearError implements Action {
