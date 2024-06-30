@@ -1,0 +1,3 @@
+[submodule "API-HeartRate"]
+	path = API-HeartRate
+	url = https://github.com/Brayan090/API-HeartRate
