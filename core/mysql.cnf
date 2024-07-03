@@ -1,7 +1,7 @@
 [client]
-database = heartrate
-user = Brayan
-password = Pastoquemado090++
+database = database name
+user = your user
+password = your password
 host = localhost
 port = 3306
 default-character-set = utf8
